@@ -23,7 +23,7 @@ public class Main {
             d = 29;
         }
 
-        if(d > D) return "-1";
+        if(d < D) return "-1";
 
         if(M >= 3 && M <= 5) return "Spring";
         else if(M >= 6 && M <= 8) return "Summer";
