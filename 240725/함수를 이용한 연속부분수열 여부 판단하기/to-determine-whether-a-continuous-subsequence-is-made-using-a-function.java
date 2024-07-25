@@ -10,14 +10,14 @@ public class Main {
 
         for(int i = 0; i < n1; ++i){
             boolean isTrue = true;
-            for(int j = 0, k = i; j <= n1 - n2; ++j, ++k){
+            for(int j = 0, k = i; j < n1 - n2; ++j, ++k){
                 if(A[k] != B[j] ){
                     isTrue = false;
                     break;
                 }
 
-                if(isTrue) return true;
             }
+            if(isTrue) return true;
         }
 
         return false;
