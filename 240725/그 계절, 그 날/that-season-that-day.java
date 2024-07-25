@@ -26,8 +26,8 @@ public class Main {
         if(d > D) return "-1";
 
         if(M >= 3 && M <= 5) return "Spring";
-        else if(M >= 3 && M <= 5) return "Summer";
-        else if(M >= 3 && M <= 5) return "Fall";
+        else if(M >= 6 && M <= 8) return "Summer";
+        else if(M >= 9 && M <= 11) return "Fall";
         else return "Winter";
         
     }
