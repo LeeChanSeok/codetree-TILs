@@ -19,7 +19,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         N = sc.nextInt();
-        arr = new int[N + 1];
+        arr = new int[16];
         arr[1] = 1;   
         arr[2] = 2;
 
