@@ -8,9 +8,9 @@ public class Main {
     public static boolean f(){
         if(n1 < n2) return false;
 
-        for(int i = 0; i < n1; ++i){
+        for(int i = 0; i <= n1 - n2; ++i){
             boolean isTrue = true;
-            for(int j = 0, k = i; j < n1 - n2; ++j, ++k){
+            for(int j = 0, k = i; j < n2; ++j, ++k){
                 if(A[k] != B[j] ){
                     isTrue = false;
                     break;
