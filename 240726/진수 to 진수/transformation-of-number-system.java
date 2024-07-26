@@ -5,8 +5,7 @@ public class Main {
     static int a, b;
 
     public static void binary(int n){
-        if(n == 1) {
-            System.out.print("1");
+        if(n == 0) {            
             return;
         }
 
