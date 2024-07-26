@@ -13,12 +13,19 @@ public class Main {
         //                                1.  2.  3.  4.  5.  6.  7.  8.  9. 10. 11. 12.
         int[] num_of_days = new int[]{0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-        int elapsedDays = -d1;
-        for(int i = m1; i < m2; ++i){
-            elapsedDays += num_of_days[i];
+        int t1 = 0;
+        for(int i = 1; i < m1; ++i){
+            t1 += num_of_days[i];
         }
-        elapsedDays += d2;
+        t1 += d1;
 
+        int t2 = 0;
+        for(int i = 1; i < m2; ++i){
+            t2 += num_of_days[i];
+        }
+        t2 += d2;
+        
+        int elapsedDays = t2 - t1;
         if(elapsedDays < 0) elapsedDays += (7 * 100);
         elapsedDays %= 7;
 
