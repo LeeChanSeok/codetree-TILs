@@ -23,11 +23,11 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         Data data = new Data();
-        System.out.println("product " + data.name + " is " + data.code);
+        System.out.println("product " + data.code + " is " + data.name);
 
         data.name = sc.next();
         data.code = sc.nextInt();
-        System.out.println("product " + data.name + " is " + data.code);
+        System.out.println("product " + data.code + " is " + data.name);
         
     }
 }
