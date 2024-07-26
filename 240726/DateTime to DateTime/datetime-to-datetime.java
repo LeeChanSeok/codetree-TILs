@@ -8,8 +8,9 @@ public class Main {
         int b = sc.nextInt();
         int c = sc.nextInt();
 
+        
         int ans = a * 24 * 60 + b * 60 + c - (11 * 24 * 60 + 11 * 60 + 11);
-
+        if(ans < 0) ans = -1;
         System.out.println(ans);
     }
 }
