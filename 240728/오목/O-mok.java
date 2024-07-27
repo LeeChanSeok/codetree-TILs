@@ -24,7 +24,7 @@ public class Main {
 	
 		// 가로
 		for(int i = 1; i <= n; ++i) {
-			for(int j = 1; j <= n - 5; ++j) {
+			for(int j = 1; j <= n - 3; ++j) {
 				if(arr[i][j] == 1 && arr[i][j+1] == 1 && arr[i][j+2] == 1 && arr[i][j+3] == 1 && arr[i][j+4] == 1) {
 					System.out.println(1);
 					System.out.println(i + " " + (j + 2));
@@ -39,7 +39,7 @@ public class Main {
 		}
 		
 		// 세로
-		for(int i = 1; i <= n - 5; ++i) {
+		for(int i = 1; i <= n - 3; ++i) {
 			for(int j = 1; j <= n; ++j) {
 				if(arr[i][j] == 1 && arr[i+1][j] == 1 && arr[i+2][j] == 1 && arr[i+3][j] == 1 && arr[i+4][j] == 1) {
 					System.out.println(1);
@@ -56,8 +56,8 @@ public class Main {
 		
 		
 		//대각선 
-		for(int i = 1; i <= n-5; ++i) {
-			for(int j = 1; j <= n - 5; ++j) {
+		for(int i = 1; i <= n - 3; ++i) {
+			for(int j = 1; j <= n - 3; ++j) {
 				if(arr[i][j] == 1 && arr[i+1][j+1] == 1 && arr[i+2][j+2] == 1 && arr[i+3][j+3] == 1 && arr[i+4][j+4] == 1) {
 					System.out.println(1);
 					System.out.println((i + 2) + " " + (j + 2));
@@ -72,7 +72,7 @@ public class Main {
 		}		
 		
 		//대각선 
-		for(int i = 1; i <= n - 5; ++i) {
+		for(int i = 1; i <= n - 3; ++i) {
 			for(int j = 5; j <= n; ++j) {
 				if(arr[i][j] == 1 && arr[i+1][j-1] == 1 && arr[i+2][j-2] == 1 && arr[i+3][j-3] == 1 && arr[i+4][j-4] == 1) {
 					System.out.println(1);
