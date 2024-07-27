@@ -8,6 +8,10 @@ public class Main {
         int[] a = new int[N+1];
         a[0] = -1;
 
+        for(int i = 1; i <= N; ++i){
+            a[i] = sc.nextInt();
+        }
+
         int cnt = 0;
         for(int i = 1; i <= N; i++)
             if(a[i] != a[i - 1])
