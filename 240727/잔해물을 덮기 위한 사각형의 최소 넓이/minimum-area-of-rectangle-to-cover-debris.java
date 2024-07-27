@@ -17,8 +17,8 @@ public class Main {
             int x2 = sc.nextInt() + OFFSET;
             int y2 = sc.nextInt() + OFFSET;
 
-            for(int i = x1; i < x2; ++i){
-                for(int j = y1; j < y2; ++j){
+            for(int i = x1; i <= x2; ++i){
+                for(int j = y1; j <= y2; ++j){
                     board[i][j] = k;
                 }
             }
