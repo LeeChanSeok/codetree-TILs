@@ -13,11 +13,16 @@ public class Main {
         }
 
         int cnt = 0;
-        for(int i = 1; i <= N; i++)
-            if(a[i] != a[i - 1])
+        int max = 0;
+        for(int i = 1; i <= N; i++) {
+            if(a[i] == a[i - 1]){
                 cnt++;
-
-        System.out.print(cnt);
+            } else {
+                cnt = 1;
+            }
+            max = Math.max(max, cnt);
+        }
+        System.out.print(max);
 
     }
 }
