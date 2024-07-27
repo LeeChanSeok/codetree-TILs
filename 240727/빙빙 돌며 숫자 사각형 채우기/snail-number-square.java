@@ -24,7 +24,7 @@ public class Main {
         answer[x][y] = 1;
         
         // n*n번 진행합니다.
-        for(int i = 2; i <= n * n; i++) {
+        for(int i = 2; i <= n*m; i++) {
             int nx = x + dx[dirNum], ny = y + dy[dirNum];
 
             if(!inRange(nx, ny) || answer[nx][ny] != 0)
@@ -36,7 +36,7 @@ public class Main {
         
         // 출력:
         for(int i = 0; i < n; i++) {
-            for(int j = 0; j < n; j++)
+            for(int j = 0; j < m; j++)
                 System.out.print(answer[i][j] + " ");
             System.out.println();
         }
