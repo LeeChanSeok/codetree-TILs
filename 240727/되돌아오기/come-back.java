@@ -25,14 +25,18 @@ public class Main {
 				c += dy[dir];
 				
 				++t;
-				if(r == 0 && c == 0) ans = t;
+				if(r == 0 && c == 0) {
+					ans = t;
+					break;
+				}
 				
 			}
+			if(ans != -1) break;
 			
 		}
+		
 		System.out.println(ans);
 		
-
 	}
 
 
