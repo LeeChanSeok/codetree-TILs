@@ -48,7 +48,7 @@ public class Main {
     	for(Data data : datas) {    		
     		
     		if(person[data.x] != 0) {
-    			if(person[data.x] == T + 1) continue;
+    			if(person[data.x] == K + 1) continue;
     			++person[data.x];
     			if(person[data.y] == 0) person[data.y] = 1; 
     			
