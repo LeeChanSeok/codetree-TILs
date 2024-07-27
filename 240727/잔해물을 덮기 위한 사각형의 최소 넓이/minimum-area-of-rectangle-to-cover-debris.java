@@ -17,8 +17,8 @@ public class Main {
             int x2 = sc.nextInt() + OFFSET;
             int y2 = sc.nextInt() + OFFSET;
 
-            for(int i = x1; i <= x2; ++i){
-                for(int j = y1; j <= y2; ++j){
+            for(int i = x1; i < x2; ++i){
+                for(int j = y1; j < y2; ++j){
                     board[i][j] = k;
                 }
             }
@@ -42,7 +42,7 @@ public class Main {
         }
 
         if(maxX < minX || maxY < minY) System.out.println(0);     
-        else System.out.print((maxY - minY) * (maxX - minX));
+        else System.out.print((maxY + 1 - minY) * (maxX + 1- minX));
     }
 
 }
