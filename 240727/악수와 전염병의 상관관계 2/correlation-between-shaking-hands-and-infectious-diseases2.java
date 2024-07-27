@@ -45,16 +45,18 @@ public class Main {
     	
     	Arrays.sort(datas);
     	
-    	for(int i = 0; i < Math.min(T, K); ++i) {
-    		Data data = datas[i];
+    	for(Data data : datas) {    		
     		
-    		if(person[data.x] == 1) {
-    			person[data.y] = 1; 
+    		if(person[data.x] != 0) {
+    			if(person[data.x] == T + 1) continue;
+    			++person[data.x];
+    			if(person[data.y] == 0) person[data.y] = 1; 
+    			
     		}
     	}
     	
     	for(int i = 1; i <= N; ++i) {
-    		System.out.print(person[i]);
+    		System.out.print((person[i] == 0)?'0':'1');
     	}
     	
     }
