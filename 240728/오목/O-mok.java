@@ -55,7 +55,7 @@ public class Main {
 		}
 		
 		
-		//대각선
+		//대각선 
 		for(int i = 1; i <= n-5; ++i) {
 			for(int j = 1; j <= n - 5; ++j) {
 				if(arr[i][j] == 1 && arr[i+1][j+1] == 1 && arr[i+2][j+2] == 1 && arr[i+3][j+3] == 1 && arr[i+4][j+4] == 1) {
@@ -71,6 +71,22 @@ public class Main {
 			}
 		}		
 		
+		//대각선 
+		for(int i = 5; i <= n; ++i) {
+			for(int j = 5; j <= n; ++j) {
+				if(arr[i][j] == 1 && arr[i+1][j-1] == 1 && arr[i+2][j-2] == 1 && arr[i+3][j-3] == 1 && arr[i+4][j-4] == 1) {
+					System.out.println(1);
+					System.out.println((i + 2) + " " + (j - 2));
+					return;
+				}
+				if(arr[i][j] == 2 && arr[i+1][j-1] == 2 && arr[i+2][j-2] == 2 && arr[i+3][j-3] == 2 && arr[i+4][j-4] == 2) {
+					System.out.println(2);
+					System.out.println((i + 2) + " " + (j - 2));
+					return;
+				}
+			}
+		}		
+
 	}
 
 	
