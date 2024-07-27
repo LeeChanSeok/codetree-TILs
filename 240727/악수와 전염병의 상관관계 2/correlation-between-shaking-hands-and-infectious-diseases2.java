@@ -47,10 +47,19 @@ public class Main {
     	
     	for(Data data : datas) {    		
     		
-    		if(person[data.x] != 0) {
-    			if(person[data.x] == K + 1) continue;
+    		if(person[data.x] != 0 && person[data.y] != 0) {
+    			if(person[data.x] <= K) ++person[data.x];
+    			if(person[data.y] <= K) ++person[data.y];
+    		}
+    		else if(person[data.x] != 0) {
+    			if(person[data.x] > K) continue;
     			++person[data.x];
-    			if(person[data.y] == 0) person[data.y] = 1; 
+    			person[data.y] = 1; 
+    			
+    		} else if(person[data.y] != 0) {
+    			if(person[data.y] > K) continue;
+    			++person[data.y];
+    			person[data.x] = 1; 
     			
     		}
     	}
