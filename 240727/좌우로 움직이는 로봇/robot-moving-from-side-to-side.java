@@ -51,32 +51,38 @@ public class Main {
 
 		}
 
-		boolean meet = false;
+		boolean meet = true;
 		int ans = 0;
 		int t = 1;
 		for (; t <= Math.min(at, bt); ++t) {
 			if (a[t] == b[t]) {
-				if(meet) continue;
+				if (meet)
+					continue;
 				meet = true;
 				++ans;
-			} else meet = false;
+			} else
+				meet = false;
 		}
 
 		if (at > bt) {
 			for (; t <= at; ++t) {
 				if (a[t] == b[bt]) {
-					if(meet) continue;
+					if (meet)
+						continue;
 					meet = true;
 					++ans;
-				} else meet = false;
+				} else
+					meet = false;
 			}
 		} else if (at < bt) {
 			for (; t <= bt; ++t) {
 				if (a[at] == b[t]) {
-					if(meet) continue;
-					meet = true;					
+					if (meet)
+						continue;
+					meet = true;
 					++ans;
-				} else meet = false;
+				} else
+					meet = false;
 			}
 		}
 
