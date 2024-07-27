@@ -13,7 +13,7 @@ public class Main {
         
         int[] D = new int[N+1];
         for(int i = 1; i <= N; i++) {
-            for(int j = i - 1; j > 0; --j){
+            for(int j = i - 1; j >= 0; --j){
                 if(a[i] > a[j]){
                     D[i] = Math.max(D[i], D[j] + 1);
                 }
