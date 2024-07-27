@@ -5,27 +5,24 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
 
-        int[] a = new int[N+1];       
+        int[] a = new int[N+1];
+        a[0] = 0;
 
         for(int i = 1; i <= N; ++i){
             a[i] = sc.nextInt();
         }
-        
-        int[] D = new int[N+1];
-        for(int i = 1; i <= N; i++) {
-            for(int j = i - 1; j >= 0; --j){
-                if(a[i] > a[j]){
-                    D[i] = Math.max(D[i], D[j] + 1);
-                }
-            }
-        }
 
+        int cnt = 0;
         int max = 0;
-        for(int i = 1; i <= N; ++i){
-            max = Math.max(max, D[i]);
+        for(int i = 1; i <= N; i++) {
+            if(a[i] > a[i - 1]){
+                cnt++;
+            } else {
+                cnt = 1;
+            }
+            max = Math.max(max, cnt);
         }
         System.out.print(max);
 
     }
-
 }
