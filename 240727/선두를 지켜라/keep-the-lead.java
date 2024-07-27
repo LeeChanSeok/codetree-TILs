@@ -20,6 +20,7 @@ public class Main {
 
             while(t-- > 0){
                 a[++at] = apos + v;
+                apos += v;
             }
             
         }        
@@ -34,6 +35,7 @@ public class Main {
 
             while(t-- > 0){
                 b[++bt] = bpos + v;
+                bpos += v;
             }
             
         }        
