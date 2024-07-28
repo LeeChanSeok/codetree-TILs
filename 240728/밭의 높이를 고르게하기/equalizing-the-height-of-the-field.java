@@ -20,12 +20,11 @@ public class Main {
 		}
 
 		int ans = Integer.MAX_VALUE;
-		for (int i = 0; i < N - T; i++) {
+		for (int i = 0; i <= N - T; i++) {
 			int v = 0;
 			for (int j = 0; j < T; ++j) {
 				v += Math.abs(H - arr[i + j]);
 			}
-			
 			ans = Math.min(ans, v);
 		}
 
