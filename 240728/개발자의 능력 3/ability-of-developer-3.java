@@ -17,11 +17,9 @@ public class Main {
 
         int minDiff = Integer.MAX_VALUE;
         for(int i = 0; i < n-2; i++) {
-        	int sum = arr[i];
         	for(int j = i + 1; j < n-1; ++j) {
-        		sum += arr[j];
         		for(int k = j + 1; k < n; ++k) {
-        			sum += arr[k];
+        			int sum = arr[i] + arr[j] + arr[k];
         			minDiff = Math.min(minDiff, Math.abs(sum - (total - sum)));
         			
         		}
