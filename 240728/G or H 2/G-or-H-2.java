@@ -27,7 +27,7 @@ public class Main {
 				if(arr[j] != '\0') {
 					if(arr[j] == 'G') ++gCnt; 
 					else if(arr[j] == 'H') ++hCnt;
-					if(gCnt == hCnt) {
+					if(gCnt == hCnt || (gCnt != 0 && hCnt == 0) ||(gCnt == 0 && hCnt != 0)) {
 						ans = Math.max(ans,  j - i);
 					}
 				}
