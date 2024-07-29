@@ -20,7 +20,8 @@ public class Main {
         for(int i = 1; i <= n - 1; ++i) {
         	
         	boolean isContect = false;
-        	for(int j = i + 1; j <= n; ++j) {
+        	for(int j = 1; j <= n; ++j) {
+        		if(i == j) continue;
         		
         		if((s[i] > s[j] && e[j] > s[i])||
         				(s[i] < s[j] && e[i] > e[j])){
