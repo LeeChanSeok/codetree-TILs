@@ -24,7 +24,7 @@ public class Main {
         		if(i == j) continue;
         		
         		if(s[i] < e[i] && s[j] < e[j]) {
-        			if((s[j] < s[i] && s[i] < e[j])||
+        			if((s[j] < s[i] && e[i] < e[j])||
         					(s[i] < s[j] && e[j] < e[i]))
         			{
         				isContect = true;
@@ -46,7 +46,7 @@ public class Main {
         			}
         		}
         		else if(s[i] > e[i] && s[j] > e[j]) {
-        			if((e[j] < s[i] && s[i] < s[j])||
+        			if((e[j] < e[i] && s[i] < s[j])||
         					(e[i] < e[j] && s[j] < s[i]))
         			{
         				isContect = true;
