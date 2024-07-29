@@ -46,7 +46,7 @@ public class Main {
 		if(p[i][0] == p[j][0] && p[j][0] != p[k][0] && (p[i][1] == p[k][1] || p[j][1] == p[k][1])) return true;
 		if(p[i][0] != p[j][0] && 
 				((p[i][1] == p[j][1] && p[j][0] == p[k][0]) 
-						||(p[i][1] != p[j][1] && p[k][i] == p[i][1] && p[k][0] == p[j][0]))) return true;
+						||(p[i][1] != p[j][1] && p[k][1] == p[i][1] && p[k][0] == p[j][0]))) return true;
 		
 		return false;
 	}
