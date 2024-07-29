@@ -23,12 +23,37 @@ public class Main {
         	for(int j = 1; j <= n; ++j) {
         		if(i == j) continue;
         		
-        		if((s[i] > s[j] && e[j] > s[i])||
-        				(s[i] < s[j] && e[i] > e[j])){
-        			isContect = true;
-        			break;
+        		if(s[i] < e[i] && s[j] < e[j]) {
+        			if((s[j] < s[i] && s[i] < e[j])||
+        					(s[i] < s[j] && e[j] < e[i]))
+        			{
+        				isContect = true;
+        				break;
+        			}
         		}
-        		
+        		else if(s[i] < e[i] && s[j] > e[j]) {
+        			if(e[j] < e[i] && s[i] < s[j])
+        			{
+        				isContect = true;
+        				break;
+        			}
+        		}
+        		else if(s[i] > e[i] && s[j] < e[j]) {
+        			if(s[j] < s[i] && e[i] < e[j])
+        			{
+        				isContect = true;
+        				break;
+        			}
+        		}
+        		else if(s[i] > e[i] && s[j] > e[j]) {
+        			if((e[j] < s[i] && s[i] < s[j])||
+        					(e[i] < e[j] && s[j] < s[i]))
+        			{
+        				isContect = true;
+        				break;
+        			}
+        		}
+        		        		        		
         	}
         	if(!isContect) ++ans;
         }
