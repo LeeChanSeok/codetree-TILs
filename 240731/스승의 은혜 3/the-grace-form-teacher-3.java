@@ -18,18 +18,18 @@ public class Main {
         int ans = 0;
         for(int i = 0; i < n; ++i) {
         	
-			int[][] a = new int[n][2];
+			int[] a = new int[n];
 			for(int j = 0; j < n; ++j) {
-				a[j] = arr[j].clone();
+				a[j] = arr[j][0] + arr[j][1];
 			}
 			
-        	a[i][0] /= 2;
-        	Arrays.sort(a, (a1, a2) -> (a1[0] + a1[1]) - (a2[0] + a2[1]));
+        	a[i] = (arr[i][0]/2) + arr[i][1];
+        	Arrays.sort(a);
         	
         	int cnt = 0;
         	int m = b;
         	for(int j = 0; j < n; ++j) {
-        		m = m - (a[j][0] + a[j][1]);
+        		m = m - a[j];
         		if(m < 0) break;
         		++cnt;
         	}
