@@ -12,14 +12,13 @@ public class Main {
     	
     	int ans = 0;
     	int i = 0, j = 0;
-    	while(A * i <= C) {
-    		int score = A * i;
-    		j = 0;
+    	int score = 0;
+    	while(score <= C) {
     		while(score <= C) {
     			ans = Math.max(ans, score);
-    			score += B * (++j);
+    			score += B;
     		}
-    		++i;
+    		score = A * (++i);
     	}
         
         System.out.println(ans);
