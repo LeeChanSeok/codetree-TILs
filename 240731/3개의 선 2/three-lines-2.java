@@ -22,6 +22,8 @@ public class Main {
 			int x = sc.nextInt();
 			int y = sc.nextInt();
 
+			point[i][0] = x;
+			point[i][1] = y;
 			X[x] = true;
 			Y[y] = true;
 		}
@@ -88,7 +90,7 @@ public class Main {
 						int x = point[i][0];
 						int y = point[i][1];
 						if (!(x == x1 || x == x2 || y == y1)) {
-							isAnswer= true;
+							isAnswer= false;
 							break;
 						}
 						
