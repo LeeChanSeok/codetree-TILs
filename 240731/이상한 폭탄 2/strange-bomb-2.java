@@ -32,7 +32,7 @@ public class Main {
 		}
 
 		if (ans == 0)
-			ans = 01;
+			ans = -1;
 		System.out.println(ans);
 	}
 }
