@@ -38,44 +38,38 @@ public class Main {
 		
 		
 		for(int i = 0; i < 3; ++i) {
-			boolean isWin = true;
+			int aCnt = 0, bCnt = 0;
 			for(int j = 0; j < 3; ++j) {
-				if(!(arr[i][j] == a || arr[i][j] == b)) {
-					isWin = false;
-					break;
-				}
+				if(arr[i][j] == a) ++aCnt;
+				else if(arr[i][j] == b) ++bCnt;
 			}
-			if(isWin) return true;
+			
+			if(aCnt + bCnt == 3 && aCnt != 0 && bCnt != 0) return true;
 		}
 		
 		for(int j = 0; j < 3; ++j) {
-			boolean isWin = true;
+			int aCnt = 0, bCnt = 0;
 			for(int i = 0; i < 3; ++i) {
-				if(!(arr[i][j] == a || arr[i][j] == b)) {
-					isWin = false;
-					break;
-				}
+				if(arr[i][j] == a) ++aCnt;
+				else if(arr[i][j] == b) ++bCnt;
 			}
-			if(isWin) return true;
+			
+			if(aCnt + bCnt == 3 && aCnt != 0 && bCnt != 0) return true;
 		}
 		
-		boolean isWin = true;
+		int aCnt = 0, bCnt = 0;
 		for(int i = 0; i < 3; ++i) {
-			if(!(arr[i][i] == a || arr[i][i] == b)) {
-				isWin = false;
-				break;
-			}
+			if(arr[i][i] == a) ++aCnt;
+			else if(arr[i][i] == b) ++bCnt;
 		}
-		if(isWin) return true;
+		if(aCnt + bCnt == 3 && aCnt != 0 && bCnt != 0) return true;
 		
-		isWin = true;
+		aCnt = bCnt = 0;
 		for(int i = 0; i < 3; ++i) {
-			if(!(arr[i][2-i] == a || arr[i][2-i] == b)) {
-				isWin = false;
-				break;
-			}
+			if(arr[i][2-i] == a) ++aCnt;
+			else if(arr[i][2-i] == b) ++bCnt;
 		}
-		if(isWin) return true;
+		if(aCnt + bCnt == 3 && aCnt != 0 && bCnt != 0) return true;
 		
 		
 		return false;
