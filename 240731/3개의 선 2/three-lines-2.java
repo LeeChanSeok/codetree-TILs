@@ -36,7 +36,7 @@ public class Main {
 	private static boolean solution() {
 		
 		int xCnt = 0, yCnt = 0;
-		for (int i = 0; i < N; ++i) {
+		for (int i = 0; i <= MAX; ++i) {
 			if (X[i])
 				xCnt++;
 			if (Y[i])
@@ -57,40 +57,47 @@ public class Main {
 	}
 
 	private static boolean solution3() {
-		for (int y1 = 0; y1 <= MAX - 2; ++y1) {
+		for (int y1 = 0; y1 <= MAX - 1; ++y1) {
 			for (int y2 = y1 + 1; y2 <= MAX; ++y2) {
 				for (int x1 = 0; x1 <= MAX; ++x1) {
 
+					boolean isAnswer = true;
 					for (int i = 0; i < N; ++i) {
 						int x = point[i][0];
 						int y = point[i][1];
-						if (x != x1 || y != y1 || y != y2)
-							return false;
+						if (!(x == x1 || y == y1 || y == y2)) {
+							isAnswer = false;
+							break;
+						}
 					}
-
+					if(isAnswer) return true;
 				}
 			}
 		}
 
-		return true;
+		return false;
 	}
 
 	private static boolean solution2() {
-		for (int x1 = 0; x1 <= MAX - 2; ++x1) {
+		for (int x1 = 0; x1 <= MAX - 1; ++x1) {
 			for (int x2 = x1 + 1; x2 <= MAX; ++x2) {
 				for (int y1 = 0; y1 <= MAX; ++y1) {
 
+					boolean isAnswer = true;
 					for (int i = 0; i < N; ++i) {
 						int x = point[i][0];
 						int y = point[i][1];
-						if (x != x1 || x != x2 || y != y1)
-							return false;
+						if (!(x == x1 || x == x2 || y == y1)) {
+							isAnswer= true;
+							break;
+						}
+						
 					}
-
+					if(isAnswer) return true;
 				}
 			}
 		}
 
-		return true;
+		return false;
 	}
 }
