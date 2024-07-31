@@ -36,7 +36,7 @@ public class Main {
         }
         
         int ans = 0;
-        for(int a = arr[0]; a <= maxVal; a++)
+        for(int a = Math.max(arr[0], arr[n-1]); a <= maxVal; a++)
             if(isPossible(a)) {
             	ans = a;
             	break;
