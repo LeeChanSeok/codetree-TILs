@@ -28,7 +28,7 @@ public class Main {
 					++cnt;
 			}
 
-			if(cnt == 0) continue;
+			if(cnt == 1) continue;
 			if (cnt >= maxCnt) {
 				maxNum = num;
 				maxCnt = cnt;
