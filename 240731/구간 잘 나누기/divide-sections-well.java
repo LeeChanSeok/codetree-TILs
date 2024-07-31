@@ -5,41 +5,51 @@ public class Main {
 	static int N, M;
 	static int[] arr;
 	static int ans;
-	static boolean[] used;
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
 		N = sc.nextInt();
 		M = sc.nextInt();
-		arr = new int[N + 1];
-		used = new boolean[N + 1];
+		arr = new int[N];
 
-		ans = Integer.MAX_VALUE;
-		for (int i = 1; i <= N; ++i) {
+		int min = Integer.MAX_VALUE;
+		for (int i = 0; i < N; ++i) {
 			arr[i] = sc.nextInt();
+			min = Math.min(min, arr[i]);
 		}
-		recursive(0, 0, 0);
+		int max = 10000;
+		int ans = solution(min, max);
 		System.out.println(ans);
 	}
 
-	private static void recursive(int idx, int max, int level) {
+	private static int solution(int min, int max) {
 
-		if(max >= ans) return;
-		
-		if (level == M - 1) {
+		for(int a = min; a <= max; ++a) {
+			
 			int sum = 0;
-			for(int i = idx + 1; i <= N; ++i) sum += arr[i];
-			max = Math.max(max, sum);
-			ans = Math.min(ans, max);
-			return;
+			int block = 0;
+			int i = 0;
+			boolean isBlock = true;
+			while(i < N) {
+				if(sum + arr[i] > a) {
+					if(sum == 0) {
+						isBlock = false;
+						break;
+					}
+					++block;
+					sum = 0;
+				}
+				else sum += arr[i++];
+			}
+			
+			if(block >= M) isBlock = false;
+			if(isBlock) return a;
+			
 		}
-
-		int sum = 0;
-		for (int i = idx + 1; i <= N; ++i) {
-			sum += arr[i];
-			recursive(i, Math.max(max, sum), level + 1);
-		}
+		
+		return 0;
 	}
+
 
 }
