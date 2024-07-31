@@ -19,20 +19,19 @@ public class Main {
 
 		Arrays.sort(arr);
 
+		int MAX = 100;
 		int ans = 0;
-		for (int i = 0; i < N; ++i) {
-			int num = arr[i];
-
-			int cnt = 0;
-			for (int j = i - 1; j >= 0; --j) {
-				if (arr[j] == num - 1)
-					++cnt;
+		for (int i = 0; i <= MAX; ++i) {
+			int aCnt = 0;
+			int bCnt = 0;
+			
+			for(int j = 0; j < N; ++j) {
+				if(arr[j] == i - 1) ++aCnt;
+				else if(arr[j] >= i) ++bCnt;
 			}
-			cnt = Math.min(cnt, L);
 
-			if (num <= (N - i + cnt))
-				ans = num;
-
+			int cnt = Math.min(aCnt, L);
+			if(cnt + bCnt >= i) ans = i;
 		}
 
 		System.out.println(ans);
