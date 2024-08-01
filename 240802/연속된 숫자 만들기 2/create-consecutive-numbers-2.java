@@ -21,7 +21,10 @@ public class Main {
 		else if(X[1] + 1 == X[2]) {
 			if(X[0] + 2 == X[1]) move = 1;
 			else move = 2;
-		}else move = 2;
+		}else {
+			if(X[0] + 2 == X[1] || X[1] + 2 == X[2]) move = 1;
+			else move = 2;
+		}
 		
 		System.out.println(move);
 	}
