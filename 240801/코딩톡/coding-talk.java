@@ -26,9 +26,11 @@ public class Main {
 
 		}
 
-		for (int i = 0; i < N; ++i) {
-			if (!read[i])
-				System.out.print((char) (i + 'A') + " ");
+		if(Y[P-1] != 0) {
+			for (int i = 0; i < N; ++i) {
+				if (!read[i])
+					System.out.print((char) (i + 'A') + " ");
+			}
 		}
 
 	}
