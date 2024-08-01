@@ -9,8 +9,8 @@ public class Main {
 		int M = sc.nextInt();
 		int P = sc.nextInt();
 
-		char[] X = new char[N];
-		int[] Y = new int[N];
+		char[] X = new char[M];
+		int[] Y = new int[M];
 
 		for (int i = 0; i < M; ++i) {
 			X[i] = sc.next().charAt(0);
