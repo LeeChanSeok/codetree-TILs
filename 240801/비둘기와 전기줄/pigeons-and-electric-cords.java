@@ -19,13 +19,14 @@ public class Main {
 			Y[i] = sc.nextInt();
 		}
 
-		int cnt = -1;
+		int cnt = 0;
 		for (int i = 1; i <= 10; ++i) {
 			int pos = -1;
 			for (int j = 0; j < N; ++j) {
-				if (X[j] == i && Y[i] != pos) {
-					++cnt;
-					pos = Y[i];
+				if (X[j] == i && Y[j] != pos) {
+					if(pos != -1) 
+						++cnt;
+					pos = Y[j];
 				}
 			}
 
