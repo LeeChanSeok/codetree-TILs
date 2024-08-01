@@ -18,12 +18,12 @@ public class Main {
 		}
 
 		boolean[] read = new boolean[N];
-		for (int i = P - 1; i < N; ++i) {
+		for (int i = 0; i < N; ++i) {
 			char c = X[i];
 			int y = Y[i];
 
-			read[c - 'A'] = true;
-
+			if(i >= P - 1 || y == Y[P-1]) 
+				read[c - 'A'] = true;
 		}
 
 		if(Y[P-1] != 0) {
