@@ -19,8 +19,9 @@ public class Main {
 
 			if (A[i] == 1) {
 				++ans;
-				i += m * 2 + 1;
+				i += m * 2;
 			}
+			++i;
 		}
 
 		System.out.print(ans);
