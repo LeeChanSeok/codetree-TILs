@@ -31,15 +31,6 @@ public class Main {
 			if(a == b && b == c) {
 				if(rank != 0) ++ans;
 				rank = 0;
-			} else if(a == b) {
-				if(rank != 1) ++ans;
-				rank = 1;
-			} else if(a == c) {
-				if(rank != 2) ++ans;
-				rank = 2;
-			} else if(b == c) {
-				if(rank != 3) ++ans;
-				rank = 3;
 			} else if(a > b && b > c) {
 				if(rank != 4) ++ans;
 				rank = 4;
@@ -49,7 +40,16 @@ public class Main {
 			} else if(c > a && c > b) {
 				if(rank != 6) ++ans;
 				rank = 6;
-			}
+			}else if(a == b) {
+				if(rank != 1) ++ans;
+				rank = 1;
+			} else if(a == c) {
+				if(rank != 2) ++ans;
+				rank = 2;
+			} else if(b == c) {
+				if(rank != 3) ++ans;
+				rank = 3;
+			} 
 
 		}
 
