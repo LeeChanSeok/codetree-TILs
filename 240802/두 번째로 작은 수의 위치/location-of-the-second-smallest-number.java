@@ -30,7 +30,7 @@ public class Main {
 		n = sc.nextInt();
 		int[] A = new int[n];
 		int[] B = new int[n];
-		for (int i = 1; i < n; ++i) {
+		for (int i = 0; i < n; ++i) {
 			A[i] = B[i] = sc.nextInt();
 		}
 
