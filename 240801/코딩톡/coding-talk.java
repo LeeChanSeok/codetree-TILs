@@ -12,7 +12,7 @@ public class Main {
 		char[] X = new char[N];
 		int[] Y = new int[N];
 
-		for (int i = 0; i < N; ++i) {
+		for (int i = 0; i < M; ++i) {
 			X[i] = sc.next().charAt(0);
 			Y[i] = sc.nextInt();
 		}
