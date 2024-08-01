@@ -13,8 +13,7 @@ public class Main {
 		
 		int move = 0;
 		if(isContinue()) move = 0;
-		
-		if(X[0] + 1 == X[1]) {
+		else if(X[0] + 1 == X[1]) {
 			if(X[1] + 2 == X[2]) move = 1;
 			else move = 2;
 		}
