@@ -44,14 +44,16 @@ public class Main {
 		}
 
 		int ans = -1;
+		int cnt = 0;
 		if(num != A[0]) {
 			for (int i = 1; i < n; ++i) {
 				if(B[i] == num) {
 					ans = i + 1;
-					break;
+					++cnt;
 				}
 			}
 		}
+		if(cnt > 1) ans = -1;
 		
 		System.out.print(ans);
 	}
