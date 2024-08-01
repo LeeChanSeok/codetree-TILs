@@ -31,19 +31,19 @@ public class Main {
 			if(a == b && b == c) {
 				if(rank != 0) ++ans;
 				rank = 0;
-			} if(a == b) {
+			} else if(a == b) {
 				if(rank != 1) ++ans;
 				rank = 1;
-			} if(a == c) {
+			} else if(a == c) {
 				if(rank != 2) ++ans;
 				rank = 2;
-			} if(b == c) {
+			} else if(b == c) {
 				if(rank != 3) ++ans;
 				rank = 3;
-			} if(a > b && a > c) {
+			} else if(a > b && b > c) {
 				if(rank != 4) ++ans;
 				rank = 4;
-			} if(b > a && b > c) {
+			} else if(b > a && b > c) {
 				if(rank != 5) ++ans;
 				rank = 5;
 			} else if(c > a && c > b) {
