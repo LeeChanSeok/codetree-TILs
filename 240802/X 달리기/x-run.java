@@ -1,39 +1,71 @@
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Main {
-	
-	int MAX_T = 10000;
-	int MAX_V = 140;
-	
-	static int X, ans;
-	
+
+	static class Data {
+		int v, p;
+
+		public Data(int v, int p) {
+			super();
+			this.v = v;
+			this.p = p;
+		}
+
+	}
+
+	static int X;
+	static Queue<Data> q;
+
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in);
 
 		X = sc.nextInt();
-		ans = Integer.MAX_VALUE;
-		
-		recursive(1, 1, 1);
+
+		q = new LinkedList<>();
+
+		q.offer(new Data(1, 1));
+		int ans = solution();
 		System.out.println(ans);
 	}
 
-	private static void recursive(int t, int v, int p) {
+	private static int solution() {
 
-		if(v == 0) return;
-		if(t >= ans) return;
-		
-		if(p == X) {
-			if(v == 1) ans = t;
-			return;
+		int t = 1;
+		while (!q.isEmpty()) {
+			int size = q.size();
+
+			while (size-- > 0) {
+				Data cur = q.poll();
+
+				int v = cur.v;
+				int p = cur.p;
+
+				if (p > X)
+					continue;
+				if (p == X) {
+					if (v == 1)
+						return t;
+					continue;
+				}
+
+				int nv = v + 1;
+				q.offer(new Data(nv, p + nv));
+
+				nv = v;
+				q.offer(new Data(nv, p + nv));
+
+				nv = v - 1;
+				if (nv != 0)
+					q.offer(new Data(nv, p + nv));
+			}
+
+			++t;
 		}
-		
-		if(p > X) return;
-		
-		recursive(t + 1, v + 1, p + (v + 1));
-		recursive(t + 1, v, p + v);
-		recursive(t + 1, v - 1, p + (v - 1));
-		
+
+		return t;
 	}
 
 }
