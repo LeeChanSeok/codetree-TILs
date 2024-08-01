@@ -24,11 +24,9 @@ public class Main {
         int ans = 0;
         if(min == 1 && max == 1) {
         	ans = 0;
-        } else if(min == 1) {
-        	ans = max - 1;
         } else {
-        	ans = max;
-        }
+        	ans = max - 1;
+        } 
         
         System.out.println(ans);
     }
