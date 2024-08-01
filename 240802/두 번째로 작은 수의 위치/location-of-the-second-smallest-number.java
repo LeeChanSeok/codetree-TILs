@@ -46,7 +46,7 @@ public class Main {
 		int ans = -1;
 		int cnt = 0;
 		if(num != A[0]) {
-			for (int i = 1; i < n; ++i) {
+			for (int i = 0; i < n; ++i) {
 				if(B[i] == num) {
 					ans = i + 1;
 					++cnt;
