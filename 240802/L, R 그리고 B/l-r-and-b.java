@@ -33,7 +33,8 @@ public class Main {
 			}
 		}
 		int ans = Math.abs(bx - lx) + Math.abs(by - ly) - 1;
-		if((lx == rx && rx == bx) || (ly == ry && ry == by)) ans += 2;
+		if((lx == rx && rx == bx) && (ly < ry && ry < by)) ans += 2;
+		if((lx < rx && rx < bx) && (ly == ry && ry == by)) ans += 2;
 		
 		
 		System.out.print(ans);
