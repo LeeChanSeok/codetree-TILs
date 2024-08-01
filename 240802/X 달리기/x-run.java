@@ -1,22 +1,32 @@
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class Main {
 
-	static class Data {
-		int v, p;
+	static class Data implements Comparable<Data> {
+		int t, v, p;
 
-		public Data(int v, int p) {
+		public Data(int t, int v, int p) {
 			super();
+			this.t = t;
 			this.v = v;
 			this.p = p;
 		}
 
+		@Override
+		public int compareTo(Data o) {
+			if (this.t == o.t) {
+				if (o.p == this.p)
+					return o.v - this.v;
+				return o.p - this.p;
+			}
+			return this.t - o.t;
+		}
+		
 	}
 
 	static int X;
-	static Queue<Data> q;
+	static PriorityQueue<Data> q;
 
 	public static void main(String[] args) {
 
@@ -24,48 +34,42 @@ public class Main {
 
 		X = sc.nextInt();
 
-		q = new LinkedList<>();
+		q = new PriorityQueue<>();
 
-		q.offer(new Data(1, 1));
+		q.offer(new Data(1, 1, 1));
 		int ans = solution();
 		System.out.println(ans);
 	}
 
 	private static int solution() {
 
-		int t = 1;
 		while (!q.isEmpty()) {
-			int size = q.size();
+			Data cur = q.poll();
 
-			while (size-- > 0) {
-				Data cur = q.poll();
+			int t = cur.t;
+			int v = cur.v;
+			int p = cur.p;
 
-				int v = cur.v;
-				int p = cur.p;
-
-				if (p > X)
-					continue;
-				if (p == X) {
-					if (v == 1)
-						return t;
-					continue;
-				}
-
-				int nv = v + 1;
-				q.offer(new Data(nv, p + nv));
-
-				nv = v;
-				q.offer(new Data(nv, p + nv));
-
-				nv = v - 1;
-				if (nv != 0)
-					q.offer(new Data(nv, p + nv));
+			if (p > X)
+				continue;
+			if (p == X) {
+				if (v == 1)
+					return t;
+				continue;
 			}
 
-			++t;
+			int nv = v + 1;
+			q.offer(new Data(t + 1, nv, p + nv));
+
+			nv = v;
+			q.offer(new Data(t + 1, nv, p + nv));
+
+			nv = v - 1;
+			if (nv != 0)
+				q.offer(new Data(t + 1, nv, p + nv));
 		}
 
-		return t;
+		return -1;
 	}
 
 }
