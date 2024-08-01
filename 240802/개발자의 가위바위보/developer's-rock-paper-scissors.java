@@ -26,9 +26,9 @@ public class Main {
 					
 					int win = 0;
 					for(int l = 0; l < N; ++l) {
-						if((X[l] == 1 && Y[l] ==3) || 
-								(X[l] == 2 && Y[l] ==1) ||
-								(X[l] == 3 && Y[l] == 2)) ++win;
+						if((X[l] == i && Y[l] == k) || 
+								(X[l] == j && Y[l] == i) ||
+								(X[l] == k && Y[l] == j)) ++win;
 					}
 					
 					max = Math.max(max, win);
