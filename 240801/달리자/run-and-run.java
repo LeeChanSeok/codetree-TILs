@@ -16,6 +16,8 @@ public class Main {
 
 		for (int i = 0; i < N; ++i) {
 			X[i] = sc.nextInt();
+		}
+		for (int i = 0; i < N; ++i) {
 			Y[i] = sc.nextInt();
 		}
 
