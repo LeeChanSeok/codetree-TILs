@@ -22,7 +22,7 @@ public class Main {
 		int j2 = Math.max(y2, b2);
 		
 		int R = (i2 - i1);
-		int C = (i2 - i1);
+		int C = (j2 - j1);
 		
 		int D = Math.max(R,  C);
 		
