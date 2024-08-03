@@ -16,7 +16,7 @@ public class Main {
         }
         
         ListIterator<Character> iter = list.listIterator(N);
-        for(int i = 0; i < N; ++i) {
+        for(int i = 0; i < M; ++i) {
         	char cmd = sc.next().charAt(0);
         	
         	if(cmd == 'L') {
@@ -24,7 +24,7 @@ public class Main {
         	} else if(cmd == 'R') {
         		if(iter.hasNext()) iter.next();
         	} else if(cmd == 'D') {
-        		if(iter.hasNext()) {
+        		if(iter.hasNext()) {        
         			iter.next();
         			iter.remove();
         		}
