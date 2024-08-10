@@ -17,6 +17,11 @@ public class Main {
 			this.y2 = y2;
 			this.sum = sum;
 		}
+
+		@Override
+		public String toString() {
+			return " [" + x1 + ", " + y1 + ", " + x2 + ", " + y2 + ", " + sum + "]";
+		}
 		
 		
 	}
@@ -40,10 +45,10 @@ public class Main {
 		points = new Point[MAX];
 		
 		for(int i1 = 0; i1 < n; ++i1) {
-			for(int j1 = 0; j1 < n; ++j1) {
+			for(int j1 = 0; j1 < m; ++j1) {
 				
 				for(int i2 = i1; i2 < n; ++i2) {
-					for(int j2 = j1; j2 < n; ++j2) {
+					for(int j2 = j1; j2 < m; ++j2) {
 						points[size++] = new Point(i1, j1, i2, j2, getSum(i1,j1,i2,j2));
 					}
 				}
@@ -81,7 +86,7 @@ public class Main {
 		int p2x2 = point2.x2;
 		int p2y2 = point2.y2;
 		
-		boolean[][] visited = new boolean[n][n];
+		boolean[][] visited = new boolean[n][m];
 		for(int i = p1x1; i <= p1x2; ++i) {
 			for(int j = p1y1; j <= p1y2; ++j) {
 				visited[i][j] = true;
