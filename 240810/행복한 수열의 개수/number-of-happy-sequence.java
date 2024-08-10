@@ -26,10 +26,10 @@ public class Main {
 					cnt = 1;
 				} else {
 					++cnt;
-					if(cnt == m) {
-						++ans;
-						break;
-					}
+				}
+				if(cnt == m) {
+					++ans;
+					break;
 				}
 				++j;
 			}
@@ -45,10 +45,10 @@ public class Main {
 					cnt = 1;
 				} else {
 					++cnt;
-					if(cnt == m) {
-						++ans;
-						break;
-					}
+				}
+				if(cnt == m) {
+					++ans;
+					break;
 				}
 				++i;
 			}
