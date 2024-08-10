@@ -18,7 +18,7 @@ public class Main {
 		int ans = 0;
 		for(int i = 0; i < n; ++i) {
 			int sum = 0;
-			for(int j = 0; j < n - 2; ++j) {
+			for(int j = 0; j < m - 2; ++j) {
 				for(int k = 0; k < 3; ++k) {
 					sum += arr[i][j+k];
 				}
@@ -28,7 +28,7 @@ public class Main {
 		
 		for(int j = 0; j < n; ++j) {
 			int sum = 0;
-			for(int i = 0; i < n - 2; ++i) {
+			for(int i = 0; i < m - 2; ++i) {
 				for(int k = 0; k < 3; ++k) {
 					sum += arr[i+k][j];
 				}
@@ -38,7 +38,7 @@ public class Main {
 		
 		for(int i = 0; i < n - 1; ++i) {
 			int sum = 0;
-			for(int j = 0; j < n - 1; ++j) {
+			for(int j = 0; j < m - 1; ++j) {
 				
 				sum = arr[i][j] + arr[i][j+1] + arr[i+1][j];
 				ans = Math.max(ans, sum);
