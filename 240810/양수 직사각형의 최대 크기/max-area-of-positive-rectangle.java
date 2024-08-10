@@ -17,7 +17,7 @@ public class Main {
 			}
 		}
 
-		int ans = Integer.MIN_VALUE;
+		int ans = 0;
 		for (int i1 = 0; i1 < n; ++i1) {
 			for (int j1 = 0; j1 < m; ++j1) {
 				for (int i2 = i1; i2 < n; ++i2) {
@@ -29,7 +29,7 @@ public class Main {
 			}
 		}
 
-		if (ans == Integer.MIN_VALUE)
+		if (ans == 0)
 			ans = -1;
 		System.out.println(ans);
 
@@ -40,8 +40,8 @@ public class Main {
 		int sum = 0;
 		for (int i = i1; i <= i2; ++i) {
 			for (int j = j1; j <= j2; ++j) {
-				if (arr[i][j] < 0)
-					return Integer.MIN_VALUE;
+				if (arr[i][j] <= 0)
+					return 0;
 			}
 		}
 		return (i2 - i1 + 1) * (j2 - j1 + 1);
