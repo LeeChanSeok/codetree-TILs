@@ -17,8 +17,8 @@ public class Main {
 
 		int ans = 0;
 		for(int i = 0; i < n; ++i) {
-			int sum = 0;
 			for(int j = 0; j < m - 2; ++j) {
+				int sum = 0;
 				for(int k = 0; k < 3; ++k) {
 					sum += arr[i][j+k];
 				}
@@ -27,8 +27,8 @@ public class Main {
 		}
 		
 		for(int j = 0; j < m; ++j) {
-			int sum = 0;
 			for(int i = 0; i < n - 2; ++i) {
+				int sum = 0;
 				for(int k = 0; k < 3; ++k) {
 					sum += arr[i+k][j];
 				}
