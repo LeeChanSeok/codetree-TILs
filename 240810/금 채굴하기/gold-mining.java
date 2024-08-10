@@ -56,7 +56,7 @@ public class Main {
 					}
 					
 					int cost = k * k + (k + 1) * (k + 1);
-					if(gold * m > cost) {
+					if(gold * m >= cost) {
 						ans = Math.max(ans, gold);
 					}
 					++k;
