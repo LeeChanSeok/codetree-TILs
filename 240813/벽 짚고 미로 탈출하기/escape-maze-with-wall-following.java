@@ -28,55 +28,35 @@ public class Main {
 
 		boolean[][][] visited = new boolean[n][n][4];
 		visited[x][y][0] = true;
-		
+
 		int move = 0;
 		int dir = 0;
-		while(true) {
+		while (true) {
 			int nx = x + dx[dir];
 			int ny = y + dy[dir];
-			
-			if(!inRange(nx, ny)) return move + 1;
-			if(visited[nx][ny][dir]) return -1;
-			if(arr[nx][ny] == '.') {
-				x = nx; y = ny;
+
+			if (!inRange(nx, ny))
+				return move + 1;
+			if (visited[nx][ny][dir])
+				return -1;
+			if (arr[nx][ny] == '.') {
+				x = nx;
+				y = ny;
 				dir = (dir + 1) % 4;
 				++move;
+				visited[nx][ny][dir] = true;
 			}
-			if(arr[nx][ny] == '#') {
+			if (arr[nx][ny] == '#') {
 				dir = (dir + 3) % 4;
+				visited[nx][ny][dir] = true;
 			}
 		}
-		
-	}
 
-	private static boolean isExit() {
-		Queue<int[]> q = new LinkedList<>();
-		q.offer(new int[] {x, y});
-		
-		boolean[][] visited = new boolean[n][n];
-		visited[x][y] = true;
-		
-		boolean isExit = false;
-		while(!q.isEmpty()) {
-			int[] cur = q.poll();
-			
-			for(int d = 0; d < 4; ++d) {
-				int nx = x + dx[d];
-				int ny = y + dy[d];
-				
-				if(!inRange(nx, ny)) return true;
-				if(arr[nx][ny] == '#') continue;
-				if(visited[nx][ny]) continue;
-				
-				q.offer(new int[] {nx, ny});
-				visited[nx][ny] = true;
-			}
-		}
-		return false;
 	}
 
 	private static boolean inRange(int x, int y) {
-		if(x < 0 || x >= n || y < 0 || y >= n) return false;
+		if (x < 0 || x >= n || y < 0 || y >= n)
+			return false;
 		return true;
 	}
 
