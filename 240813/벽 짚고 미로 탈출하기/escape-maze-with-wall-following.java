@@ -49,7 +49,7 @@ public class Main {
 			}
 			if (arr[nx][ny] == '#') {
 				dir = (dir + 3) % 4;
-				if (visited[nx][ny][dir])
+				if (visited[x][y][dir])
 					return -1;
 				visited[x][y][dir] = true;
 			}
