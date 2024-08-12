@@ -6,7 +6,7 @@ public class Main {
 	static int[] dy = { 0, 1, 0, -1 };
 
 	static int n, m, q;
-	static int arr[][];
+	static int[][] arr, new_arr;
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -16,6 +16,7 @@ public class Main {
 		q = sc.nextInt();
 
 		arr = new int[n][m];
+        new_arr = new int[n][m];
 
 		for (int i = 0; i < n; ++i) {
 			for (int j = 0; j < m; ++j) {
@@ -42,8 +43,6 @@ public class Main {
 	}
 
 	private static void avg(int r1, int c1, int r2, int c2) {
-
-		int[][] new_arr = new int[n][m];
 
 		for (int i = r1; i <= r2; ++i) {
 			for (int j = c1; j <= c2; ++j) {
