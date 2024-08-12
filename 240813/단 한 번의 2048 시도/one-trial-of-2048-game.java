@@ -62,7 +62,7 @@ public class Main {
 			}
 		} else if (dir == 'U') {
 			for (int j = 0; j < n; ++j) {
-				for (int i = 0; j < n - 1; ++j) {
+				for (int i = 0; i < n - 1; ++i) {
 					if (arr[i][j] == arr[i + 1][j]) {
 						arr[i][j] *= 2;
 						arr[i + 1][j] = 0;
@@ -71,7 +71,7 @@ public class Main {
 			}
 		} else if (dir == 'D') {
 			for (int j = 0; j < n; ++j) {
-				for (int i = n - 1; j > 0; --j) {
+				for (int i = n - 1; i > 0; --i) {
 					if (arr[i][j] == arr[i - 1][j]) {
 						arr[i][j] *= 2;
 						arr[i - 1][j] = 0;
@@ -109,7 +109,7 @@ public class Main {
 		} else if (dir == 'U') {
 			for (int j = 0; j < n; ++j) {
 				int end = 0;
-				for (int i = 0; i < n; ++j) {
+				for (int i = 0; i < n; ++i) {
 					if (arr[i][j] != 0)
 						new_arr[end++][j] = arr[i][j];
 				}
@@ -117,7 +117,7 @@ public class Main {
 		} else if (dir == 'D') {
 			for (int j = 0; j < n; ++j) {
 				int end = n - 1;
-				for (int i = n - 1; i >= 0; --j) {
+				for (int i = n - 1; i >= 0; --i) {
 					if (arr[i][j] != 0)
 						new_arr[end--][j] = arr[i][j];
 				}
