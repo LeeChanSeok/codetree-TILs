@@ -32,23 +32,26 @@ public class Main {
 		int move = 0;
 		int dir = 0;
 		while (true) {
+			
 			int nx = x + dx[dir];
 			int ny = y + dy[dir];
 
 			if (!inRange(nx, ny))
 				return move + 1;
-			if (visited[nx][ny][dir])
-				return -1;
 			if (arr[nx][ny] == '.') {
+				if (visited[nx][ny][dir])
+					return -1;
 				x = nx;
 				y = ny;
 				dir = (dir + 1) % 4;
 				++move;
-				visited[nx][ny][dir] = true;
+				visited[x][y][dir] = true;
 			}
 			if (arr[nx][ny] == '#') {
 				dir = (dir + 3) % 4;
-				visited[nx][ny][dir] = true;
+				if (visited[nx][ny][dir])
+					return -1;
+				visited[x][y][dir] = true;
 			}
 		}
 
