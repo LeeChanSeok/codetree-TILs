@@ -45,7 +45,6 @@ public class Main {
 				y = ny;
 				dir = (dir + 1) % 4;
 				++move;
-				visited[x][y][dir] = true;
 			}
 			if (arr[nx][ny] == '#') {
 				dir = (dir + 3) % 4;
