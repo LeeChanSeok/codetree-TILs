@@ -59,7 +59,7 @@ public class Main {
 			arr[0][j] = 0;
 		}
 
-		for (int i = Math.max(n - 1, r + num - 1), j = Math.min(-1, r - num); j >= 0; --j, ++i) {
+		for (int i = Math.min(n - 1, r + num - 1), j = r - num; j >= 0; --j, --i) {
 			arr[i][c] = arr[j][c];
 			arr[j][c] = 0;
 		}
