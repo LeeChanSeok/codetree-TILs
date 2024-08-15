@@ -36,16 +36,17 @@ public class Main {
 		}
 
 		for (int i = idx; i < n; ++i) {
-			int d = calc_dist(idx, i);
+			int d = calc_dist(cnt, i);
+			res[cnt] = i;
 			recursive(i + 1, cnt + 1, Math.max(dist, d));
 		}
 
 	}
 
-	private static int calc_dist(int idx, int target) {
+	private static int calc_dist(int cnt, int target) {
 
 		int dist = 0;
-		for (int i = 0; i < idx; ++i) {
+		for (int i = 0; i < cnt; ++i) {
 			int[] pos = arr[res[i]];
 
 			int d = (pos[0] - arr[target][0]) * (pos[0] - arr[target][0])
