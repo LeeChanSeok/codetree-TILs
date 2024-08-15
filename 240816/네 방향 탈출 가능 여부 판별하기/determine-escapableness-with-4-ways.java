@@ -17,9 +17,9 @@ public class Main {
 		n = sc.nextInt();
 		m = sc.nextInt();
 
-		arr = new int[n][n];
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr.length; j++) {
+		arr = new int[n][m];
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
 				arr[i][j] = sc.nextInt();
 			}
 		}
