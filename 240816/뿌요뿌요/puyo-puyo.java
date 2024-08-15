@@ -33,9 +33,8 @@ public class Main {
 
 				if (cnt >= 4) {
 					++ans;
-					max = Math.max(max, cnt);
-
 				}
+				max = Math.max(max, cnt);
 			}
 		}
 		System.out.println(ans + " " + max);
