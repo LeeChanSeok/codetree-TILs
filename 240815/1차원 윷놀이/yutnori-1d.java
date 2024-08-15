@@ -14,7 +14,7 @@ public class Main {
 		m = sc.nextInt();
 		k = sc.nextInt();
 
-		arr = new int[m + 1];
+		arr = new int[k];
 		Arrays.fill(arr, 1);
 		turn = new int[n];
 		for(int i = 0; i < n; ++i) {
@@ -30,7 +30,7 @@ public class Main {
 
 		if (idx == n) {
 			int cnt = 0;
-			for (int i = 0; i < 3; ++i) {
+			for (int i = 0; i < k; ++i) {
 				if(arr[i] == m) ++cnt;
 			}
 			ans = Math.max(ans, cnt);
@@ -39,7 +39,7 @@ public class Main {
 		}
 
 		int move = turn[idx];
-		for (int i = 1; i <= k; ++i) {
+		for (int i = 0; i < k; ++i) {
 			int pos = arr[i];
 			arr[i] = Math.min(pos + move, m);
 			recursive(idx + 1);
