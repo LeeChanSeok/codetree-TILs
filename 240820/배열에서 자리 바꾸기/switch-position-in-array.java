@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Main {
-	static int MAX = 100000;
 
 	static class Node {
 		int v;
@@ -26,12 +25,13 @@ public class Main {
 		for (int i = 0; i <= n + 1; ++i) {
 			nodes[i] = new Node(i);
 		}
+
 		for (int i = 1; i <= n; ++i) {
 			nodes[i].prev = nodes[i - 1];
 			nodes[i].next = nodes[i + 1];
 		}
 		nodes[0].next = nodes[1];
-		nodes[n+1].prev = nodes[n];
+		nodes[n + 1].prev = nodes[n];
 
 		m = sc.nextInt();
 		for (int i = 0; i < m; ++i) {
@@ -55,6 +55,21 @@ public class Main {
 				if (P != null)
 					P.next = nodes[c];
 				nodes[d].next = nodes[a];
+
+			} else if (nodes[d].next == nodes[a]) {
+
+				Node P = nodes[c].prev;
+				Node N = nodes[b].next;
+
+				nodes[c].prev = nodes[d];
+				nodes[d].next = N;
+				if (N != null)
+					N.prev = nodes[d];
+
+				nodes[a].prev = P;
+				if (P != null)
+					P.next = nodes[a];
+				nodes[b].next = nodes[c];
 
 			} else {
 				Node P1 = nodes[a].prev;
@@ -86,66 +101,6 @@ public class Main {
 		while (cur.next != null) {
 			System.out.print(cur.v + " ");
 			cur = cur.next;
-		}
-
-	}
-
-	private static void disconnext(Node node) {
-
-		if (node.prev != null) {
-			node.prev.next = node.next;
-		}
-
-		if (node.next != null) {
-			node.next.prev = node.prev;
-		}
-
-		node.prev = node.next = null;
-
-	}
-
-	private static void print(Node cur) {
-
-		String str = "";
-		if (cur.prev == null)
-			str += "0";
-		else
-			str += cur.prev.v;
-		str += " ";
-
-		if (cur.next == null)
-			str += "0";
-		else
-			str += cur.next.v;
-		System.out.println(str);
-	}
-
-	private static void insertPrev(Node cur, Node node) {
-
-		node.prev = cur.prev;
-		node.next = cur;
-
-		if (node.prev != null) {
-			node.prev.next = node;
-		}
-
-		if (node.next != null) {
-			node.next.prev = node;
-		}
-
-	}
-
-	private static void insertNext(Node cur, Node node) {
-
-		node.prev = cur;
-		node.next = cur.next;
-
-		if (node.next != null) {
-			node.next.prev = node;
-		}
-
-		if (node.prev != null) {
-			node.prev.next = node;
 		}
 
 	}
