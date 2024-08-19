@@ -21,7 +21,8 @@ public class Main {
 				int a = pq.poll();
 				int b = pq.poll();
 				int c = pq.poll();
-				System.out.println(a * b * c);
+				long sum = (long) a * (long) b * (long) c;
+				System.out.println(sum);
 				pq.offer(a);
 				pq.offer(b);
 				pq.offer(c);
