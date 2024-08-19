@@ -15,9 +15,10 @@ public class Main {
 			arr[i] = sc.nextInt();
 		}
 		
-		dp[0] = 1;
+		Arrays.fill(dp, 1);
 		for (int i = 1; i < n; ++i) {
 			int num = arr[i];
+            
 			for (int j = i - 1; j >= 0; --j) {
 				if (arr[j] < num) {
 					dp[i] = Math.max(dp[i], dp[j] + 1);
