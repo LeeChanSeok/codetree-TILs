@@ -109,17 +109,17 @@ public class Main {
 		}
 
 		for (int i = 1; i <= m; ++i) {
+			StringBuilder sb  = new StringBuilder();
 			String str = "";
 			int cnt = 0;
 
 			Node cur = head[i].next;
 			while (cur.v != -1) {
 				++cnt;
-				str += cur.v + " ";
+				sb.append(cur.v + " ");
 				cur = cur.next;
 			}
-			str = cnt + " " + str;
-			System.out.println(str);
+			System.out.println(cnt + " " + sb.toString());
 		}
 
 	}
@@ -158,6 +158,51 @@ public class Main {
 
 		node.next = node.prev = null;
 		return node;
+	}
+
+	private static void disconnext(Node node) {
+
+		if (node.prev != null) {
+			node.prev.next = node.next;
+		}
+
+		if (node.next != null) {
+			node.next.prev = node.prev;
+		}
+
+		node.prev = node.next = null;
+
+	}
+
+	private static void print(Node cur) {
+
+		String str = "";
+		if (cur.prev == null)
+			str += "0";
+		else
+			str += cur.prev.v;
+		str += " ";
+
+		if (cur.next == null)
+			str += "0";
+		else
+			str += cur.next.v;
+		System.out.println(str);
+	}
+
+	private static void insertPrev(Node cur, Node node) {
+
+		node.prev = cur.prev;
+		node.next = cur;
+
+		if (node.prev != null) {
+			node.prev.next = node;
+		}
+
+		if (node.next != null) {
+			node.next.prev = node;
+		}
+
 	}
 
 	private static void insertHead(Node head, Node node) {
