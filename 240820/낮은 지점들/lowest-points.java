@@ -22,7 +22,6 @@ public class Main {
 		long sum = 0;
 		for (Entry<Integer, Integer> entry : map.entrySet()) {
 			sum += entry.getValue();
-			System.out.println(sum);
 
 		}
 		System.out.println(sum);
