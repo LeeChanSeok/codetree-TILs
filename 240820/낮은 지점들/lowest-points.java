@@ -19,9 +19,10 @@ public class Main {
 			map.put(x, Math.min(tmp, y));
 		}
 
-		int sum = 0;
+		long sum = 0;
 		for (Entry<Integer, Integer> entry : map.entrySet()) {
 			sum += entry.getValue();
+			System.out.println(sum);
 
 		}
 		System.out.println(sum);
