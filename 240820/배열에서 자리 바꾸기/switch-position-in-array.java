@@ -23,14 +23,15 @@ public class Main {
 		n = sc.nextInt();
 
 		Node[] nodes = new Node[n + 2];
-		for (int i = 1; i <= n; ++i) {
+		for (int i = 0; i <= n + 1; ++i) {
 			nodes[i] = new Node(i);
 		}
-
 		for (int i = 1; i <= n; ++i) {
 			nodes[i].prev = nodes[i - 1];
 			nodes[i].next = nodes[i + 1];
 		}
+		nodes[0].next = nodes[1];
+		nodes[n+1].prev = nodes[n];
 
 		m = sc.nextInt();
 		for (int i = 0; i < m; ++i) {
@@ -81,15 +82,8 @@ public class Main {
 
 		}
 
-		Node cur = null;
-		for (int i = 1; i <= n; ++i) {
-			if (nodes[i].prev == null) {
-				cur = nodes[i];
-				break;
-			}
-		}
-
-		while (cur != null) {
+		Node cur = nodes[0].next;
+		while (cur.next != null) {
 			System.out.print(cur.v + " ");
 			cur = cur.next;
 		}
