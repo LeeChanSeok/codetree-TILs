@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
+	static int MAX = 100000;
 
 	static class Node {
 		int v;
@@ -11,6 +12,8 @@ public class Main {
 			this.v = v;
 			this.prev = this.next = null;
 		}
+
+
 
 	}
 
@@ -61,7 +64,7 @@ public class Main {
 				Node P = nodes[c].prev;
 				Node N = nodes[b].next;
 
-				nodes[c].prev = nodes[d];
+				nodes[c].prev = nodes[b];
 				nodes[d].next = N;
 				if (N != null)
 					N.prev = nodes[d];
@@ -104,5 +107,6 @@ public class Main {
 		}
 
 	}
+
 
 }
