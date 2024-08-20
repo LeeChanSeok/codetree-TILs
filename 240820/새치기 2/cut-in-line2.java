@@ -123,7 +123,6 @@ public class Main {
 					cur = cur.next;
 				}
 			}
-			sb.append('\n');
 			System.out.println(sb);
 		}
 
