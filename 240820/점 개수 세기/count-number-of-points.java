@@ -31,9 +31,14 @@ public class Main {
 			int a = sc.nextInt();
 			int b = sc.nextInt();
 
-			int s = map.get(set.ceiling(a));
-			int e = map.get(set.floor(b));
-			sb.append(e - s + 1).append('\n');
+			if (set.ceiling(a) == null || set.floor(b) == null)
+				sb.append(0);
+			else {
+
+				int s = map.get(set.ceiling(a));
+				int e = map.get(set.floor(b));
+				sb.append(e - s + 1).append('\n');
+			}
 		}
 
 		System.out.println(sb);
