@@ -112,8 +112,8 @@ public class Main {
 
 		}
 
-		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < m; ++i) {
+			StringBuilder sb = new StringBuilder();
 			Node cur = head[i];
 			if (cur == null)
 				sb.append("-1");
@@ -124,9 +124,9 @@ public class Main {
 				}
 			}
 			sb.append('\n');
+			System.out.println(sb);
 		}
 
-		System.out.println(sb);
 	}
 
 	private static void changeHT(Node A, Node B) {
