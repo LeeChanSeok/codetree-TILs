@@ -112,19 +112,21 @@ public class Main {
 
 		}
 
+		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < m; ++i) {
 			Node cur = head[i];
 			if (cur == null)
-				System.out.print(-1);
+				sb.append("-1");
 			else {
 				while (cur != null) {
-					System.out.print(cur.name + " ");
+					sb.append(cur.name + " ");
 					cur = cur.next;
 				}
 			}
-			System.out.println();
+			sb.append('\n');
 		}
 
+		System.out.println(sb);
 	}
 
 	private static void changeHT(Node A, Node B) {
@@ -136,7 +138,7 @@ public class Main {
 		else if (h != -1) {
 			head[h] = B.next;
 			head[h].prev = null;
-		} else if (t != -1) {
+		} else if (tail[t] == B) {
 			tail[t] = A.prev;
 			tail[t].next = null;
 		}
@@ -198,6 +200,7 @@ public class Main {
 
 	}
 
+
 	private static void disconnext(Node node) {
 
 		if (node.prev != null) {
@@ -211,6 +214,7 @@ public class Main {
 		node.prev = node.next = null;
 
 	}
+
 
 	private static void insertPrev(Node cur, Node node) {
 
@@ -241,6 +245,4 @@ public class Main {
 		}
 
 	}
-
-
 }
