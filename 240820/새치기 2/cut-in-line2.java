@@ -111,7 +111,6 @@ public class Main {
 			}
 
 		}
-		
 		for (int j = 0; j < m; ++j) {
 			StringBuilder sb = new StringBuilder();
 			Node cur = head[j];
@@ -126,6 +125,7 @@ public class Main {
 			System.out.println(sb);
 		}
 //		System.out.println();
+		
 
 	}
 
@@ -222,14 +222,23 @@ public class Main {
 	}
 
 	private static void insertPrev(Node cur, Node node) {
-
 		
-		cur.prev.next = node;
-		node.prev = cur.prev;
+		if(cur.prev != null) {
+			cur.prev.next = node;
+			node.prev = cur.prev;
+		}
 		
 		cur.prev = node;
 		node.next = cur;
 
+//		
+//		if (node.prev != null) {
+//			node.prev.next = node;
+//		}
+//		
+//		if (node.next != null) {
+//			node.next.prev = node;
+//		}
 
 	}
 
