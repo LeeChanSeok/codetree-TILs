@@ -136,7 +136,7 @@ public class Main {
 		else if (h != -1) {
 			head[h] = B.next;
 			head[h].prev = null;
-		} else if (tail[t] == B) {
+		} else if (t != -1) {
 			tail[t] = A.prev;
 			tail[t].next = null;
 		}
