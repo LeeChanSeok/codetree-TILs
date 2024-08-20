@@ -18,7 +18,7 @@ public class Main {
 			presum[i] = presum[i - 1] + arr[i];
 		}
 
-		int ans = n;
+		int ans = Integer.MAX_VALUE;
 		int l = 1, r = 1;
 		while (l <= r && r <= n) {
 			int sum = presum[r] - presum[l - 1];
@@ -30,6 +30,7 @@ public class Main {
 			}
 		}
 
+		if(ans == Integer.MAX_VALUE) ans = -1;
 		System.out.println(ans);
 
 	}
