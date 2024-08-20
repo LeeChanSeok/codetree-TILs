@@ -32,7 +32,7 @@ public class Main {
 			int b = sc.nextInt();
 
 			if (set.ceiling(a) == null || set.floor(b) == null)
-				sb.append(0);
+				sb.append(0).append('\n');
 			else {
 
 				int s = map.get(set.ceiling(a));
