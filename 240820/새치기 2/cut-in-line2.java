@@ -105,16 +105,15 @@ public class Main {
 
 				changeHT(A, B);
 				insertPrev(C, A, B);
-				int h = isHead(B);
+				int h = isHead(C);
 				if (h != -1)
 					head[h] = A;
 			}
 
 		}
-
-		for (int i = 0; i < m; ++i) {
+		for (int j = 0; j < m; ++j) {
 			StringBuilder sb = new StringBuilder();
-			Node cur = head[i];
+			Node cur = head[j];
 			if (cur == null)
 				sb.append("-1");
 			else {
@@ -125,6 +124,7 @@ public class Main {
 			}
 			System.out.println(sb);
 		}
+		
 
 	}
 
@@ -140,6 +140,9 @@ public class Main {
 		} else if (t != -1) {
 			tail[t] = A.prev;
 			tail[t].next = null;
+		} else {
+			A.prev.next = B.next;
+			B.next.prev = A.prev;
 		}
 
 	}
@@ -199,7 +202,6 @@ public class Main {
 
 	}
 
-
 	private static void disconnext(Node node) {
 
 		if (node.prev != null) {
@@ -213,7 +215,6 @@ public class Main {
 		node.prev = node.next = null;
 
 	}
-
 
 	private static void insertPrev(Node cur, Node node) {
 
