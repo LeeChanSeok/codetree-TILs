@@ -25,14 +25,17 @@ public class Main {
 			map.put(arr[i], i);
 		}
 
+		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < m; ++i) {
 			int a = sc.nextInt();
 			int b = sc.nextInt();
 
 			int s = map.get(a);
 			int e = map.get(b);
-			System.out.printf("%d\n", e - s + 1);
+			sb.append(e - s + 1).append('\n');
 		}
+
+		System.out.println(sb);
 
 	}
 
