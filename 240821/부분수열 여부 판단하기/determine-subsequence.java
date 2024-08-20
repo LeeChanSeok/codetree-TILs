@@ -17,26 +17,37 @@ public class Main {
 
 		int[] B = new int[m];
 		for (int i = 0; i < m; ++i) {
-			A[i] = sc.nextInt();
+			B[i] = sc.nextInt();
 		}
 
 		boolean isSub = false;
-		int j = 0, i = 0;
-		for (; j < m; ++j) {
+		if (isSub(A, B))
+			System.out.println("Yes");
+		else
+			System.out.println("No");
+
+	}
+
+	private static boolean isSub(int[] A, int[] B) {
+
+		int n = A.length;
+		int m = B.length;
+
+		int i = 0;
+		for (int j = 0; j < m; ++j) {
 
 			while (i < n && B[j] != A[i]) {
 				++i;
 			}
 
+			if (i == n)
+				return false;
+			else
+				++i;
+
 		}
-		if (j == m)
-			isSub = true;
 
-		if (isSub)
-			System.out.println("Yes");
-		else
-			System.out.println("No");
-
+		return true;
 	}
 
 }
