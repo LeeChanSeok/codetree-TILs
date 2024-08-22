@@ -15,7 +15,7 @@ public class Main {
 		int min = Integer.MAX_VALUE;
 		int max = 0;
 
-		for (int i = a; i <= b; ++i) {
+		for (long i = a; i <= b; ++i) {
 			int turn = binarySearch(m, i);
 			min = Math.min(min, turn);
 			max = Math.max(max, turn);
@@ -24,10 +24,10 @@ public class Main {
 
 	}
 
-	private static int binarySearch(long r, int target) {
+	private static int binarySearch(long m, long target) {
 
 		int turn = 1;
-		long l = 0;
+		long l = 1, r = m;
 		while (l <= r) {
 			long mid = (l + r) / 2;
 
