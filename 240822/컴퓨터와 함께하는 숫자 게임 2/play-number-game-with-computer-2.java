@@ -9,14 +9,14 @@ public class Main {
 
 		long m = sc.nextLong();
 
-		int a = sc.nextInt();
-		int b = sc.nextInt();
+		long a = sc.nextLong();
+		long b = sc.nextLong();
 
-		int min = Integer.MAX_VALUE;
-		int max = 0;
+		long min = Long.MAX_VALUE;
+		long max = 0;
 
 		for (long i = a; i <= b; ++i) {
-			int turn = binarySearch(m, i);
+			long turn = binarySearch(m, i);
 			min = Math.min(min, turn);
 			max = Math.max(max, turn);
 		}
@@ -26,7 +26,7 @@ public class Main {
 
 	private static int binarySearch(long m, long target) {
 
-		int turn = 1;
+		long turn = 1;
 		long l = 1, r = m;
 		while (l <= r) {
 			long mid = (l + r) / 2;
