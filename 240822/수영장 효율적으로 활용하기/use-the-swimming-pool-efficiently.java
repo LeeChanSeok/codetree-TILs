@@ -23,9 +23,10 @@ public class Main {
 			int cnt = 1;
 			int sum = 0;
 			int max = 0;
+			boolean isGroup = true;
 			for(int i = 0; i < n; ++i) {
 				if(arr[i] > mid) {
-					max = Integer.MAX_VALUE;
+					isGroup = false;
 					break;
 				}				
 				
@@ -38,7 +39,7 @@ public class Main {
 			}
 			max = Math.max(sum, max);
 			
-			if(cnt <= m) {
+			if(cnt <= m && isGroup) {
 				res = Math.min(res, max);
 				r = mid - 1;
 			} else {
