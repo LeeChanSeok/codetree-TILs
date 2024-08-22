@@ -23,7 +23,7 @@ public class Main {
 
 	private static int binarySearch(int[] arr, int target) {
 
-		int l = 0, r = arr.length;
+		int l = 0, r = arr.length - 1;
 		while (l <= r) {
 			int mid = (l + r) / 2;
 
