@@ -20,12 +20,9 @@ public class Main {
 			return Long.compare(b, a);
 		});
 
-		String ans = "";
 		for (String num : arr) {
-			ans += num;
+			System.out.print(num);
 		}
-
-		System.out.println(ans);
 
 	}
 
