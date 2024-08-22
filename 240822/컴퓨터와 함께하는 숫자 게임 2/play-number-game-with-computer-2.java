@@ -24,7 +24,7 @@ public class Main {
 
 	}
 
-	private static int binarySearch(long m, long target) {
+	private static long binarySearch(long m, long target) {
 
 		long turn = 1;
 		long l = 1, r = m;
