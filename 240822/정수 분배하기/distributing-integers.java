@@ -16,7 +16,7 @@ public class Main {
 		}
 		
 		int l = 1, r = 100000;
-		int res = 1;
+		int res = 0;
 		while(l <= r) {
 			int mid = (l + r) / 2;
 			
@@ -37,5 +37,6 @@ public class Main {
 		System.out.println(res);
 
 	}
+
 
 }
