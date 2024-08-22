@@ -12,12 +12,12 @@ public class Main {
 		for (int i = 0; i < n; ++i) {
 			arr[i] = sc.next();
 		}
-		
-		Arrays.sort(arr, (a1, a2) -> {
-			int a = Integer.parseInt(a1 + "" + a2);
-			int b = Integer.parseInt(a2 + "" + a1);
 
-			return b - a;
+		Arrays.sort(arr, (a1, a2) -> {
+			long a = Long.parseLong(a1 + "" + a2);
+			long b = Long.parseLong(a2 + "" + a1);
+
+			return Long.compare(b, a);
 		});
 
 		String ans = "";
