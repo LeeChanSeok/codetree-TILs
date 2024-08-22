@@ -24,7 +24,9 @@ public class Main {
 				cnt = 0;
 			}
 		}
-
+		if (cnt != 0) {
+			ans += (cnt - 1) / 4 + 1;
+		}
 		System.out.println(ans);
 
 	}
