@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-		long m = sc.nextInt();
+		long m = sc.nextLong();
 
 		int a = sc.nextInt();
 		int b = sc.nextInt();
