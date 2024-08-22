@@ -20,7 +20,7 @@ public class Main {
 
 	private static long binarySearch(long s) {
 
-		long l = 1, r = (long) 1e9;
+		long l = 1, r = (long) 1e10;
 		long res = 0;
 		while (l <= r) {
 			long mid = (l + r) / 2;
@@ -37,5 +37,6 @@ public class Main {
 
 		return res;
 	}
+
 
 }
