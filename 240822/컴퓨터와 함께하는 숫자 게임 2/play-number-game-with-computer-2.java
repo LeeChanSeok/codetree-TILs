@@ -7,12 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-		int m = sc.nextInt();
-
-		int[] A = new int[m];
-		for (int i = 0; i < m; ++i) {
-			A[i] = i + 1;
-		}
+		long m = sc.nextInt();
 
 		int a = sc.nextInt();
 		int b = sc.nextInt();
@@ -21,7 +16,7 @@ public class Main {
 		int max = 0;
 
 		for (int i = a; i <= b; ++i) {
-			int turn = binarySearch(A, i);
+			int turn = binarySearch(m, i);
 			min = Math.min(min, turn);
 			max = Math.max(max, turn);
 		}
@@ -29,18 +24,18 @@ public class Main {
 
 	}
 
-	private static int binarySearch(int[] arr, int target) {
+	private static int binarySearch(long r, int target) {
 
 		int turn = 1;
-		int l = 0, r = arr.length - 1;
+		long l = 0;
 		while (l <= r) {
-			int mid = (l + r) / 2;
+			long mid = (l + r) / 2;
 
-			if (arr[mid] == target) {
+			if (mid == target) {
 				return turn;
 			}
 
-			if (arr[mid] > target) {
+			if (mid > target) {
 				r = mid - 1;
 			} else {
 				l = mid + 1;
