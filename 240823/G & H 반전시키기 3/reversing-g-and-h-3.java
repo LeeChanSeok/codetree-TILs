@@ -14,21 +14,14 @@ public class Main {
 
 		int cnt = 0;
 		int ans = 0;
-		boolean isDiff = false;
 		for (int i = 0; i < n; ++i) {
 			if (A[i] != B[i]) {
-				if (!isDiff) {
-					isDiff = true;
-					++ans;
-				}
-				
 				++cnt;
-				if (cnt == 4) {
-					cnt = 0;
-					isDiff = false;
-				}
 			} else {
-				isDiff = false;
+				if (cnt != 0) {
+					ans += (cnt - 1) / 4 + 1;
+				}
+				cnt = 0;
 			}
 		}
 
