@@ -18,10 +18,10 @@ public class Main {
 		for (int i = 0; i < n; ++i) {
 			if (A[i] != B[i]) {
 				if (!isDiff) {
+					isDiff = true;
 					++ans;
-
 				}
-				isDiff = true;
+				
 				++cnt;
 				if (cnt == 4) {
 					cnt = 0;
