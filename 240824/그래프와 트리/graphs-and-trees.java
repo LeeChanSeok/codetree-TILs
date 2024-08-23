@@ -47,8 +47,8 @@ public class Main {
 			if (visited[next] == group)
 				return false;
 			visited[next] = group;
-			if (traversal(next, node))
-				return true;
+			if (!traversal(next, node))
+				return false;
 		}
 
 		return true;
