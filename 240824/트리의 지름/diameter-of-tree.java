@@ -68,6 +68,7 @@ public class Main {
 
 		if (dist > res) {
 			x = node;
+			res = dist;
 		}
 
 		for (Edge child : tree[node]) {
