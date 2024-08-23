@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Main {
 
 	static List<Integer>[] tree;
-	static boolean[] visited;
-	static int n, m, ans;
+	static int[] visited;
+	static int n, m, group, ans;
 
 	public static void main(String[] args) {
 
@@ -27,24 +27,30 @@ public class Main {
 			tree[y].add(x);
 		}
 
-		visited = new boolean[n + 1];
+		visited = new int[n + 1];
 		for (int i = 1; i <= n; ++i) {
-			if (!visited[i]) {
-				traversal(i);
-				++ans;
+			if (visited[i] == 0) {
+				++group;
+				if (traversal(i, 0))
+					++ans;
 			}
 		}
 		System.out.println(ans);
 	}
 
-	private static void traversal(int node) {
+	private static boolean traversal(int node, int prev) {
 
 		for (int next : tree[node]) {
-			if (visited[next])
+			if (next == prev)
 				continue;
-			visited[next] = true;
-			traversal(next);
+			if (visited[next] == group)
+				return false;
+			visited[next] = group;
+			if (traversal(next, node))
+				return true;
 		}
+
+		return true;
 
 	}
 }
