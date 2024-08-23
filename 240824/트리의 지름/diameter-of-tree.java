@@ -17,7 +17,7 @@ public class Main {
 
 	static List<Edge>[] tree;
 	static boolean[] visited;
-	static int n, x, ans;
+	static int n, x, ans, res;
 
 	public static void main(String[] args) {
 
@@ -40,14 +40,15 @@ public class Main {
 
 		visited = new boolean[n + 1];
 		visited[1] = true;
-		traversal(1);
+		res = 0;
+		traversal(1, 0);
 
 		ans = 0;
 		visited = new boolean[n + 1];
 		visited[x] = true;
 		dfs(x, 0);
 		System.out.println(ans);
-		
+
 	}
 
 	private static void dfs(int node, int dist) {
@@ -63,19 +64,18 @@ public class Main {
 
 	}
 
-	private static void traversal(int node) {
+	private static void traversal(int node, int dist) {
 
-		boolean isLeaf = true;
+		if (dist > res) {
+			x = node;
+		}
+
 		for (Edge child : tree[node]) {
 			if (visited[child.u])
 				continue;
 			visited[child.u] = true;
-			traversal(child.u);
-			isLeaf = false;
+			traversal(child.u, dist + child.d);
 		}
-
-		if (isLeaf)
-			x = node;
 
 	}
 }
