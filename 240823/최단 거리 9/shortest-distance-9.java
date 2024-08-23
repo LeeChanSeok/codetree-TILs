@@ -87,7 +87,7 @@ public class Main {
 		}
 		res.add(A);
 
-		System.out.println(res.size() - 1);
+		System.out.println(dist[B]);
 		for (int i = res.size() - 1; i >= 0; --i) {
 			System.out.print(res.get(i) + " ");
 		}
