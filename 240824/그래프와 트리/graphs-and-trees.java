@@ -31,6 +31,7 @@ public class Main {
 		for (int i = 1; i <= n; ++i) {
 			if (visited[i] == 0) {
 				++group;
+				visited[i] = group;
 				if (traversal(i, 0))
 					++ans;
 			}
