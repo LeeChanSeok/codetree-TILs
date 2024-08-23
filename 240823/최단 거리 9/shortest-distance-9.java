@@ -43,6 +43,7 @@ public class Main {
 			int z = sc.nextInt();
 
 			graph[x].add(new Edge(y, z));
+			graph[y].add(new Edge(x, z));
 		}
 
 		int A = sc.nextInt();
