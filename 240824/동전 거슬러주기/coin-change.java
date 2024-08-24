@@ -13,9 +13,13 @@ public class Main {
 		int[] dp = new int[m + 1];
 		Arrays.fill(dp, (int) 1e9);
 
+		int cnt = 0;
 		for (int i = 0; i < n; ++i) {
-			coin[i] = sc.nextInt();
-			dp[coin[i]] = 1;
+			int c = sc.nextInt();
+			if (c <= m) {
+				coin[cnt++] = c;
+				dp[c] = 1;
+			}
 		}
 
 		for (int i = 1; i <= m; ++i) {
@@ -26,7 +30,10 @@ public class Main {
 			}
 		}
 
-		System.out.println(dp[m]);
+		if (dp[m] == (int) 1e9)
+			System.out.println(-1);
+		else
+			System.out.println(dp[m]);
 	}
 
 }
