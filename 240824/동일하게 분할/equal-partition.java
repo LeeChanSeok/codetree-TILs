@@ -15,26 +15,31 @@ public class Main {
 			m += A[i];
 		}
 
-		m /= 2;
-		int[] dp = new int[m + 1];
-		Arrays.fill(dp, (int) 1e9);
-		dp[0] = 0;
+		if (m % 2 == 1)
+			System.out.println("No");
+		else {
 
-		for (int i = 0; i < n; ++i) {
-			for (int j = m; j >= 0; --j) {
-				if (j >= A[i]) {
-					if (dp[j - A[i]] == (int) 1e9)
-						continue;
-					dp[j] = Math.min(dp[j], dp[j - A[i]] + 1);
+			m /= 2;
+			int[] dp = new int[m + 1];
+			Arrays.fill(dp, (int) 1e9);
+			dp[0] = 0;
 
+			for (int i = 0; i < n; ++i) {
+				for (int j = m; j >= 0; --j) {
+					if (j >= A[i]) {
+						if (dp[j - A[i]] == (int) 1e9)
+							continue;
+						dp[j] = Math.min(dp[j], dp[j - A[i]] + 1);
+
+					}
 				}
 			}
-		}
 
-		if (dp[m] == (int) 1e9)
-			System.out.println("No");
-		else
-			System.out.println("Yes");
+			if (dp[m] == (int) 1e9)
+				System.out.println("No");
+			else
+				System.out.println("Yes");
+		}
 	}
 
 }
